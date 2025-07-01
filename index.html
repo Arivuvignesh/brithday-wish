@@ -10,7 +10,35 @@
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to right, #ffe4e1, #ffe6f0);
       overflow-x: hidden;
-    }.rose {
+    }#countdown-wrapper {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff8fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#countdown-wrapper h2 {
+  font-size: 1.5rem;
+  color: #e91e63;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 20px;
+}
+
+#countdown {
+  font-size: 1.2rem;
+  font-family: 'Fira Code', monospace;
+  color: #333;
+}
+
+.rose {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -35,6 +63,7 @@
   border-radius: 30px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.2);
   text-align: center;
+  display: none;
 }
 
 h1 {
@@ -169,22 +198,15 @@ p {
   border-radius: 8px;
 }
 
-@media (max-width: 600px) {
-  .container {
-    margin: 5vh 10px;
-    padding: 30px 20px;
-  }
-  h1 { font-size: 2rem; }
-  p, .typewriter { font-size: 1rem; }
-}
-
   </style>
 </head>
 <body>
   <audio id="bg-music" autoplay loop>
     <source src="https://www.chosic.com/wp-content/uploads/2021/03/Happy-Birthday-To-You-Instrumental-Version.mp3" type="audio/mpeg">
-  </audio>
-  <canvas class="fireworks"></canvas>  <div class="container" id="card">
+  </audio>  <div id="countdown-wrapper">
+    <h2>🎁 A Special Surprise is Waiting...</h2>
+    <div id="countdown"></div>
+  </div>  <div class="container" id="card">
     <h1>🎉 Happy Birthday Sneha Mam! 🎂</h1>
     <div class="typewriter">To the one who turned knowledge into inspiration...</div>
     <p>Wishing you a day filled with laughter, joy, and sweet memories.</p>
@@ -196,12 +218,32 @@ p {
       <p>🎓 Graduated</p>
       <p>👩‍🏫 Became an amazing teacher</p>
       <p>🌟 Inspired hundreds of students</p>
-      <p>🎉 Celebrate enjoy each and every second!</p>
+      <p>🎉 Celebrate each and every second !</p>
     </div>
     <button class="download-btn" onclick="downloadCard()">🎁 Download as Card</button>
     <div class="footer">> echo "Happy Birthday to the best mam in the universe!";</div>
     <div class="credit">Made with 💗 by <img src="logo .jpg" alt="Arivu Logo"></div>
   </div>  <script>
+    const unlockTime = new Date("2025-07-03T00:00:00").getTime();
+
+    const countdownInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = unlockTime - now;
+
+      if (distance <= 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown-wrapper").style.display = "none";
+        document.getElementById("card").style.display = "block";
+      } else {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = ⏳ Unlocks in: ${days}d ${hours}h ${minutes}m ${seconds}s;
+      }
+    }, 1000);
+
     window.onload = function() {
       for (let i = 0; i < 20; i++) {
         const rose = document.createElement('div');
