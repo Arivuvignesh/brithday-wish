@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎉 Happy Birthday Sneha Mam 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Fira+Code&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe4e1, #ffe6f0);
+      overflow-x: hidden;
+    }.rose {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url('https://i.imgur.com/ZMCiyEk.png');
+  background-size: cover;
+  animation: floatUp linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); }
+  100% { transform: translateY(-10vh) rotate(360deg); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 10vh auto;
+  background: #fff8fa;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #e91e63;
+  text-shadow: 2px 2px #ffc0cb;
+}
+
+.typewriter {
+  font-size: 1.2rem;
+  font-family: 'Fira Code', monospace;
+  color: #444;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #e91e63;
+  width: 0;
+  animation: typing 5s steps(40, end) forwards, blink 1s step-end infinite;
+  margin: 20px auto;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 30px 0;
+}
+
+.cake-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: swing 3s infinite ease-in-out;
+  transform-origin: top center;
+}
+
+@keyframes swing {
+  0%   { transform: rotate(5deg); }
+  50%  { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+.rope {
+  height: 100px;
+  width: 3px;
+  background-color: #555;
+}
+
+.cake {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.balloon {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  background: #ff69b4;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: balloonFloat 12s linear infinite;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  line-height: 60px;
+  font-size: 20px;
+}
+
+@keyframes balloonFloat {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-100vh); }
+}
+
+.timeline {
+  margin: 30px auto;
+  text-align: left;
+  max-width: 600px;
+  font-family: 'Fira Code', monospace;
+  background: #fff0f6;
+  padding: 20px;
+  border-left: 3px solid #e91e63;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.timeline p::before {
+  content: '🎈 ';
+}
+
+.download-btn {
+  margin-top: 20px;
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #d81b60;
+}
+
+.footer {
+  margin-top: 40px;
+  font-style: italic;
+  color: #666;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+}
+
+.credit {
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #444;
+}
+.credit img {
+  width: 80px;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 10px;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 5vh 10px;
+    padding: 30px 20px;
+  }
+  h1 { font-size: 2rem; }
+  p, .typewriter { font-size: 1rem; }
+}
+
+  </style>
+</head>
+<body>
+  <audio id="bg-music" autoplay loop>
+    <source src="https://www.chosic.com/wp-content/uploads/2021/03/Happy-Birthday-To-You-Instrumental-Version.mp3" type="audio/mpeg">
+  </audio>
+  <canvas class="fireworks"></canvas>  <div class="container" id="card">
+    <h1>🎉 Happy Birthday Sneha Mam! 🎂</h1>
+    <div class="typewriter">To the one who turned knowledge into inspiration...</div>
+    <p>Wishing you a day filled with laughter, joy, and sweet memories.</p>
+    <div class="cake-container">
+      <div class="rope"></div>
+      <img src="Chocolate_Bliss_Birthday.webp" class="cake" alt="Birthday Cake">
+    </div>
+    <div class="timeline">
+      <p>🎓 Graduated</p>
+      <p>👩‍🏫 Became an amazing teacher</p>
+      <p>🌟 Inspired hundreds of students</p>
+      <p>🎉 Celebrate enjoy each and every second!</p>
+    </div>
+    <button class="download-btn" onclick="downloadCard()">🎁 Download as Card</button>
+    <div class="footer">> echo "Happy Birthday to the best mam in the universe!";</div>
+    <div class="credit">Made with 💗 by <img src="logo .jpg" alt="Arivu Logo"></div>
+  </div>  <script>
+    window.onload = function() {
+      for (let i = 0; i < 20; i++) {
+        const rose = document.createElement('div');
+        rose.className = 'rose';
+        rose.style.left = Math.random() * 100 + 'vw';
+        rose.style.animationDuration = (10 + Math.random() * 10) + 's';
+        rose.style.top = '100vh';
+        document.body.appendChild(rose);
+      }
+
+      for (let i = 0; i < 10; i++) {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.innerText = 'S';
+        balloon.style.left = Math.random() * 100 + 'vw';
+        balloon.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(balloon);
+      }
+    }
+
+    function downloadCard() {
+      const element = document.getElementById("card");
+      html2canvas(element).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "SnehaMam_BirthdayCard.png";
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    }
+  </script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script></body>
+</html>
